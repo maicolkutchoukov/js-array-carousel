@@ -1,5 +1,5 @@
 /*
-
+-----------------------------------------------------------
 MILESTONE 2
 Adesso rimuoviamo tutto il markup statico e 
 inseriamo tutte le immagini dinamicamente
@@ -10,7 +10,7 @@ che avrà una classe specifica che la renderà visibile.
 Al termine di questa fase ci ritroveremo 
 con lo stesso slider stilato nella milestone 1, 
 ma costruito dinamicamente attraverso JavaScript.
-
+-----------------------------------------------------------
 */
 
 const img1 = document.createElement('img');
@@ -33,7 +33,7 @@ for (let i = 0; i < imgArray.length; i++) {
 }
 
 /*
-
+--------------------------------------------------------------------------------
 MILESTONE 3
 Al click dell'utente sulle frecce, il programma cambierà l'immagine attiva, 
 che quindi verrà visualizzata al posto della precedente.
@@ -44,7 +44,7 @@ Abbiamo completato ormai da qualche giorno la sessione HTML e CSS,
 se non ci ricordiamo qualcosa andiamo pure a riguardare alcuni argomenti. 
 Non dedichiamo però al ripasso più di una mezz'ora, 
 così da non perdere di vista il focus dell'esercizio.
-
+--------------------------------------------------------------------------------
 */
 
 const buttonPrev = document.querySelector('.prev');
@@ -55,7 +55,7 @@ let contatore = 0
 
 buttonNext.addEventListener('click', function(){
     
-    if (contatore <= 3){
+    if (contatore < 4){
         imgArray[contatore].classList.remove('active');    
         contatore++;
         imgArray[contatore].classList.add('active');             
@@ -63,9 +63,7 @@ buttonNext.addEventListener('click', function(){
         imgArray[contatore].classList.remove('active');
         contatore = 0;
         imgArray[contatore].classList.add('active');       
-
-    }
-    
+    }   
 })
 
 // Creazione bottone scorrimento 'Foto Precedente'
