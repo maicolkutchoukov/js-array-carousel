@@ -27,12 +27,9 @@ img5.src = 'img/05.webp';
 
 const imgArray = [img1, img2, img3, img4, img5];
 const carousel = document.querySelector('.carousel-container');
-let itemsImg = document.querySelector('.items')
-
-
 
 for (let i = 0; i < imgArray.length; i++) {    
-    itemsImg.append(imgArray[i]);
+    carousel.append(imgArray[i]);
 }
 
 /*
@@ -59,12 +56,16 @@ let contatore = 0
 buttonNext.addEventListener('click', function(){
     
     if (contatore <= 3){
-        imgArray[contatore].classList.remove('active');
-        console.log(imgArray[contatore]);
+        imgArray[contatore].classList.remove('active');    
         contatore++;
+        imgArray[contatore].classList.add('active');             
+    } else if (contatore = 4){
+        imgArray[contatore].classList.remove('active');
+        contatore = 0;
         imgArray[contatore].classList.add('active');       
-        console.log(imgArray[contatore]);
-    }    
+
+    }
+    
 })
 
 // Creazione bottone scorrimento 'Foto Precedente'
@@ -72,11 +73,14 @@ buttonNext.addEventListener('click', function(){
 buttonPrev.addEventListener('click', function(){
     
     if (contatore > 0){
-        imgArray[contatore].classList.remove('active');
-        console.log(imgArray[contatore]);
+        imgArray[contatore].classList.remove('active');      
         contatore--;
-        imgArray[contatore].classList.add('active');       
-        console.log(imgArray[contatore]);
-    }    
+        imgArray[contatore].classList.add('active');               
+    }  else if (contatore = 1){
+        contatore = 0
+        imgArray[contatore].classList.remove('active');
+        contatore = 4;
+        imgArray[contatore].classList.add('active'); 
+    }   
 })
 
