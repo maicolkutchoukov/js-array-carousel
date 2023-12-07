@@ -59,7 +59,7 @@ buttonNext.addEventListener('click', function(){
         imgArray[contatore].classList.remove('active');    
         contatore++;
         imgArray[contatore].classList.add('active');             
-    } else if (contatore = 4){
+    } else{
         imgArray[contatore].classList.remove('active');
         contatore = 0;
         imgArray[contatore].classList.add('active');       
@@ -76,9 +76,8 @@ buttonPrev.addEventListener('click', function(){
         imgArray[contatore].classList.remove('active');      
         contatore--;
         imgArray[contatore].classList.add('active');               
-    }  else if (contatore = 1){
-        contatore = 0
-        imgArray[contatore].classList.remove('active');
+    }  else {   
+        imgArray[0].classList.remove('active');
         contatore = 4;
         imgArray[contatore].classList.add('active'); 
     }   
