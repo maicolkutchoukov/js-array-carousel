@@ -54,30 +54,50 @@ let contatore = 0
 // Creazione bottone scorrimento 'Foto successiva'
 
 buttonNext.addEventListener('click', function(){
+    imgArray[contatore].classList.remove('active');    
     
     if (contatore < 4){
-        imgArray[contatore].classList.remove('active');    
-        contatore++;
-        imgArray[contatore].classList.add('active');             
+        contatore++;            
     } else{
-        imgArray[contatore].classList.remove('active');
-        contatore = 0;
-        imgArray[contatore].classList.add('active');       
+        contatore = 0;      
     }   
+    imgArray[contatore].classList.add('active');             
 })
 
 // Creazione bottone scorrimento 'Foto Precedente'
 
 buttonPrev.addEventListener('click', function(){
+    imgArray[contatore].classList.remove('active');      
     
-    if (contatore > 0){
-        imgArray[contatore].classList.remove('active');      
-        contatore--;
-        imgArray[contatore].classList.add('active');               
+    if (contatore > 0){    
+        contatore--;              
     }  else {   
-        imgArray[0].classList.remove('active');
         contatore = 4;
-        imgArray[contatore].classList.add('active'); 
     }   
+    imgArray[contatore].classList.add('active');             
 })
 
+// Timing function
+
+let clock = setInterval(myFunctionNext, 3000);
+
+function myFunctionNext(){
+        imgArray[contatore].classList.remove('active');    
+    
+    if (contatore < 4){
+        contatore++;            
+    } else{
+        contatore = 0;      
+    }   
+    imgArray[contatore].classList.add('active');    
+}
+
+const stopButton = document.querySelector('.stop');
+stopButton.addEventListener ('click', function(){
+    if (clock != null) {
+        clearInterval(clock);
+        clock = null
+    } else {
+        clock = setInterval(myFunctionNext, 3000);
+    }
+})

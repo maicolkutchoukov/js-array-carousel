@@ -1,6 +1,6 @@
 .my-container{
     width: 1000px;
-    height: 100vh;
+    height: 90vh;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -18,18 +18,16 @@
     background-color: aquamarine;
 }
 
-
 img{
     width: 100%;
     display: none;
 }
 
-
 .active{
     display: block;
 }
 
-button{
+button:not(.stop){
     position: absolute;
     border: 1px solid white;
     width: 20px;
@@ -51,3 +49,4 @@ button{
 .next i{
     margin-left: 2px;
 }
+
