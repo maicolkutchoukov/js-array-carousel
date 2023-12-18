@@ -54,14 +54,15 @@ let contatore = 0
 // Creazione bottone scorrimento 'Foto successiva'
 
 buttonNext.addEventListener('click', function(){
-    imgArray[contatore].classList.remove('active');    
+    // imgArray[contatore].classList.remove('active');    
     
-    if (contatore < 4){
-        contatore++;            
-    } else{
-        contatore = 0;      
-    }   
-    imgArray[contatore].classList.add('active');             
+    // if (contatore < 4){
+    //     contatore++;            
+    // } else{
+    //     contatore = 0;      
+    // }   
+    // imgArray[contatore].classList.add('active');
+    myFunctionNext()             
 })
 
 // Creazione bottone scorrimento 'Foto Precedente'
@@ -79,7 +80,7 @@ buttonPrev.addEventListener('click', function(){
 
 // Timing function
 
-let clock = setInterval(myFunctionNext, 3000);
+let clock = setInterval(myFunctionNext, 1000);
 
 function myFunctionNext(){
         imgArray[contatore].classList.remove('active');    
@@ -96,8 +97,12 @@ const stopButton = document.querySelector('.stop');
 stopButton.addEventListener ('click', function(){
     if (clock != null) {
         clearInterval(clock);
+        stopButton.innerHTML = "Riavvia L'autoplay"
+
         clock = null
     } else {
         clock = setInterval(myFunctionNext, 3000);
+        stopButton.innerHTML = "Ferma L'autoplay"
+
     }
 })
